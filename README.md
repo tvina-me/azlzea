@@ -16,7 +16,7 @@ The Enterprise-Scale architecture is modular by design and allows customers to s
 
 | Reference implementation | Description | ARM Template | Link |
 |:-------------------------|:-------------|:-------------|------|
-| WingTip | Azure without hybrid connectivity |[![Deploy To Azure](https://docs.microsoft.com/en-us/azure/templates/media/deploy-to-azure.svg)](https://portal.azure.com/#blade/Microsoft_Azure_CreateUIDef/CustomDeploymentBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftvina-me%2Fazlz%2Fmain%2Faz-lz-wingtip-custom-naming%2FeslzArm.json/uiFormDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2Ftvina-me%2Fazlz%2Fmain%2Faz-lz-wingtip-custom-naming%2Feslz-portal.json) | [Detailed description](./README.md) |
+| WingTip | Azure without hybrid connectivity |[![Deploy To Azure](https://docs.microsoft.com/en-us/azure/templates/media/deploy-to-azure.svg)](https://portal.azure.com/#blade/Microsoft_Azure_CreateUIDef/CustomDeploymentBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftvina-me%2Fazlzea%2Fmain%2Faz-lz-wingtip-custom-naming%2FeslzArm.json/uiFormDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2Ftvina-me%2Fazlzea%2Fmain%2Faz-lz-wingtip-custom-naming%2Feslz-portal.json) | [Detailed description](./README.md) |
 
 #### Deploying in Azure global regions
 
