@@ -4,7 +4,7 @@
     "parameters": {
         "rgName": {
             "type": "string",
-            "defaultValue": "[concat('rg-management-',deployment().location,variables('defaultInstanceSuffix'))]",
+            "defaultValue": "rg-management",
             "metadata": {
                 "description": "Provide the resource group name where the Log Analytics workspace is deployed."
             }
@@ -123,7 +123,6 @@
         }
     },
     "variables": {
-         "defaultInstanceSuffix": "-001",
         "laResourceId": "[toLower(concat(subscription().id, '/resourceGroups/', parameters('rgName'), '/providers/Microsoft.OperationalInsights/workspaces/', parameters('workspaceName')))]",
         "solutions": {
             "security": {
