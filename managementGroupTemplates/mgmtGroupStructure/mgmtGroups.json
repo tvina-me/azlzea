@@ -159,7 +159,7 @@
                 "displayName": "[parameters('platformMgs')[copyIndex()]]",
                 "details": {
                     "parent": {
-                        "id": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('enterpriseScaleManagementGroups').platform.displayName)]"
+                        "id": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('enterpriseScaleManagementGroups').platform.name)]"
                     }
                 }
             }
