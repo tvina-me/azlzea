@@ -833,21 +833,21 @@
             "lzVnetRg": "[concat('rg-lz-vnet-', parameters('connectivityLocation'), '-001')]"
         },
         // Declaring deterministic names for platform resources that will be created
-        "platformResourceNames": {
-            "logAnalyticsWorkspace": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-law')]",
-            "automationAccount": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-aauto')]",
-            "vpnGwName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-vpngw-', parameters('connectivityLocation'))]",
-            "erGwName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-ergw-', parameters('connectivityLocation'))]",
-            "ddosName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-ddos-', parameters('connectivityLocation'))]",
-            "azFwPolicyName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-azfwpolicy-', parameters('connectivityLocation'))]",
-            "azFwName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-fw-', parameters('connectivityLocation'))]",
-            "azErGwIpName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-erpip-', parameters('connectivityLocation'))]",
-            "hubName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-hub-', parameters('connectivityLocation'))]",
-            "vwanName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-vwan-', parameters('connectivityLocation'))]",
-            "azVpnGwIpName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-gwpip-', parameters('connectivityLocation'))]",
-            "azFwIpName": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-fwpip-', parameters('connectivityLocation'))]",
-            "identityVnet": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-vnet-', parameters('connectivityLocation'))]",
-            "lzVnet": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-vnet-', parameters('connectivityLocation'))]"
+        "platformResourceNames": {     
+            "vpngwname": "[concat('vpng-', parameters('connectivityLocation'), '-001')]",
+            "erGwName": "[concat('erg-', parameters('connectivityLocation'), '-001')]",
+            "azFwPolicyName": "[concat('afwp-', parameters('connectivityLocation'), '-001')]",
+            "hubName": "[concat('vnet-hub-', parameters('connectivityLocation'), '-001')]",
+            "azVpnGwIpName": "[concat('pip-vpng-',parameters('connectivityLocation'), '-001')]",
+            "azFwName": "[concat('afw-',parameters('connectivityLocation'), '-001')]",
+            "azErGwIpName": "[concat('pip-erg-',parameters('connectivityLocation'), '-001')]",
+            "azFwIpName": "[concat('pip-afw-',parameters('connectivityLocation'), '-001')]",
+            "logAnalyticsWorkspace": "[concat('log-',parameters('connectivityLocation'))]",
+            "automationAccount": "[concat('aauto-',parameters('connectivityLocation'))]",
+            "ddosName": "[concat('ddos-', parameters('connectivityLocation'),'-001')]",
+            "vwanName": "[concat('vwan-', parameters('connectivityLocation'),'-001')]",
+            "identityVnet": "[concat('vnet-identity-', parameters('connectivityLocation'),'-001')]",
+            "lzVnet": "[concat('vnet-lz-', parameters('connectivityLocation'),'-001')]"
         },
         // Declaring subscriptionId for AzOps
         "azOpsSubscriptionId": "[if(empty(parameters('azOpsSubscriptionId')), parameters('singlePlatformSubscriptionId'), parameters('azOpsSubscriptionId'))]",
@@ -1041,7 +1041,7 @@
             "apiVersion": "2019-10-01",
             "name": "[variables('deploymentNames').roleDefsDeploymentName]",
             "location": "[deployment().location]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
+            "scope": "[concat('Microsoft.Management/managementGroups/', concat('mg-',parameters('enterpriseScaleCompanyPrefix')))]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtGroupDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').mgmtGroupLiteDeploymentName)]"
@@ -1063,7 +1063,7 @@
             "apiVersion": "2019-10-01",
             "name": "[variables('deploymentNames').policyDeploymentName]",
             "location": "[deployment().location]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
+            "scope": "[concat('Microsoft.Management/managementGroups/', concat('mg-',parameters('enterpriseScaleCompanyPrefix')))]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments', variables('deploymentNames').mgmtGroupDeploymentName)]",
                 "[resourceId('Microsoft.Resources/deployments', variables('esLiteDeploymentNames').mgmtGroupLiteDeploymentName)]"
@@ -1087,7 +1087,7 @@
             "apiVersion": "2020-10-01",
             "name": "[concat('preparingToLaunch', copyIndex())]",
             "location": "[deployment().location]",
-            "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
+            "scope": "[concat('Microsoft.Management/managementGroups/', concat('mg-',parameters('enterpriseScaleCompanyPrefix')))]",
             "dependsOn": [
                 "[variables('deploymentNames').policyDeploymentName]"
             ],
