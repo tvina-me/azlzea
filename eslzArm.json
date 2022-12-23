@@ -824,13 +824,13 @@
         },
         // Declaring deterministic names for Resource Groups that will be created for platform resources
         "platformRgNames": {
-            "mgmtRg": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-management')]",
-            "azOpsRg": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-azops')]",
+            "mgmtRg": "rg-management",
+            "azOpsRg": "rg-azops",
             "connectivityRg": "[concat('rg-connectivity-', parameters('connectivityLocation'), '-001')]",
-            "ddosRg": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-ddos')]",
-            "privateDnsRg": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-privatedns')]",
-            "identityVnetRg": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-identity-vnet-', parameters('connectivityLocation'), '-001')]",
-            "lzVnetRg": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-lz-vnet-', parameters('connectivityLocation'), '-001')]"
+            "ddosRg": "rg-ddos",
+            "privateDnsRg": "rg-privatedns",
+            "identityVnetRg": "[concat('rg-identity-vnet-', parameters('connectivityLocation'), '-001')]",
+            "lzVnetRg": "[concat('rg-lz-vnet-', parameters('connectivityLocation'), '-001')]"
         },
         // Declaring deterministic names for platform resources that will be created
         "platformResourceNames": {
