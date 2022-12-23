@@ -52,10 +52,6 @@
                 "name": "mg-sandboxes",
                 "displayName": "sandboxes"
             }
-        },
-        "noPlatformMgs": {
-            "name" : "mg-noPlatformMgs",
-            "displayName" : "noPlatformMgs"
         }
     },
     "resources": [
