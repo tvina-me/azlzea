@@ -147,7 +147,7 @@
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
             "scope": "/",
-            "name": "[if(greater(length(parameters('platformMgs')),0),concat('mg-',parameters('platformMgs')[copyIndex()]),variables('noPlatformMgs'))]",
+            "name": "[concat('mg-',parameters('platformMgs')[copyIndex()])]",
             "dependsOn": [
                 "[tenantResourceId('Microsoft.Management/managementGroups', variables('enterpriseScaleManagementGroups').platform.name)]"
             ],
@@ -156,7 +156,7 @@
                 "count": "[length(parameters('platformMgs'))]"
             },
             "properties": {
-                "displayName": "[if(greater(length(parameters('platformMgs')),0),parameters('platformMgs')[copyIndex()],variables('noPlatformMgs'))]",
+                "displayName": "[parameters('platformMgs')[copyIndex()]]",
                 "details": {
                     "parent": {
                         "id": "[tenantResourceId('Microsoft.Management/managementGroups/', variables('enterpriseScaleManagementGroups').platform.displayName)]"
