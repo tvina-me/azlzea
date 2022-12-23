@@ -665,14 +665,14 @@
     "variables": {
         // Declaring the prescriptive management group structure that will be used in the scope construction
         "mgmtGroups": {
-            "eslzRoot": "[parameters('enterpriseScaleCompanyPrefix')]",
-            "platform": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'platform')]",
-            "management": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'management')]",
-            "connectivity": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'connectivity')]",
-            "identity": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'identity')]",
-            "lzs": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'landingzones')]",
-            "corp": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'corp')]",
-            "online": "[concat(parameters('enterpriseScaleCompanyPrefix'), '-', 'online')]"
+            "eslzRoot": "[concat('mg-',parameters('enterpriseScaleCompanyPrefix'))]",
+            "platform": "mg-platform",
+            "management": "mg-management",
+            "connectivity": "mg-connectivity",
+            "identity": "mg-identity",
+            "lzs": "mg-landingzones",
+            "corp": "mg-corp",
+            "online": "mg-online"
         },
         // Declaring scopes that will be used for optional deployments, such as platform components (monitoring, networking, identity), policy assignments, subscription placement etc.
         "scopes": {
