@@ -19,7 +19,7 @@
     },
     "variables": {
         "policyDefinitions": {
-            "denySubnetWithoutNsg": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-Subnet-Without-Nsg')]"
+            "denySubnetWithoutNsg": "[concat('/providers/Microsoft.Management/managementGroups/',  concat('mg-',parameters('topLevelManagementGroupPrefix')), '/providers/Microsoft.Authorization/policyDefinitions/Deny-Subnet-Without-Nsg')]"
          },
         "policyAssignmentNames": {
             "denySubnetWithoutNsg": "Deny-Subnet-Without-Nsg",
