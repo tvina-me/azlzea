@@ -19,7 +19,7 @@
     },
     "variables": {
         "policyDefinitions": {
-            "denyDatabricksVnet": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-Databricks-VirtualNetwork')]"
+            "denyDatabricksVnet": "[concat('/providers/Microsoft.Management/managementGroups/',  concat('mg-',parameters('topLevelManagementGroupPrefix')), '/providers/Microsoft.Authorization/policyDefinitions/Deny-Databricks-VirtualNetwork')]"
          },
         "policyAssignmentNames": {
             "denyDatabricksVnet": "Deny-DataB-Vnet",

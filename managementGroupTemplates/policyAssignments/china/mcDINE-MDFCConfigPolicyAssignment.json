@@ -55,7 +55,7 @@
     },
     "variables": {
         "policyDefinitions": {
-            "deployAzureSecurity": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'), '/providers/Microsoft.Authorization/policySetDefinitions/Deploy-MDFC-Config')]"
+            "deployAzureSecurity": "[concat('/providers/Microsoft.Management/managementGroups/',  concat('mg-',parameters('topLevelManagementGroupPrefix')), '/providers/Microsoft.Authorization/policySetDefinitions/Deploy-MDFC-Config')]"
         },
         "policyAssignmentNames": {
             "azureSecurity": "Deploy-MDFC-Config",

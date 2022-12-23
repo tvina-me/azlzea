@@ -19,7 +19,7 @@
     },
     "variables": {
         "policyDefinitions": {
-            "denyRdp": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-RDP-From-Internet')]"
+            "denyRdp": "[concat('/providers/Microsoft.Management/managementGroups/',  concat('mg-',parameters('topLevelManagementGroupPrefix')), '/providers/Microsoft.Authorization/policyDefinitions/Deny-RDP-From-Internet')]"
             },
         "policyAssignmentNames": {
             "denyRdp": "Deny-RDP-from-internet",

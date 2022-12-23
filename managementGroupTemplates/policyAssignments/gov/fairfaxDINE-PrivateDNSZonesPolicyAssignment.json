@@ -53,7 +53,7 @@
             "azureCognitiveSearchPrivateDnsZoneId": "[concat(variables('baseId'), 'privatelink.search.windows.net')]"
         },
         "policyDefinitions": {
-            "deployPrivateDnsZones": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'), '/providers/Microsoft.Authorization/policySetDefinitions/Deploy-Private-DNS-Zones')]"
+            "deployPrivateDnsZones": "[concat('/providers/Microsoft.Management/managementGroups/',  concat('mg-',parameters('topLevelManagementGroupPrefix')), '/providers/Microsoft.Authorization/policySetDefinitions/Deploy-Private-DNS-Zones')]"
         },
         "policyAssignmentNames": {
             "deployPrivateDnsZones": "Deploy-Private-DNS-Zones",
